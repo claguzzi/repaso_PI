@@ -51,6 +51,7 @@ export const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+    
       .addCase(getUsers.fulfilled, (state, action) => {
         return action.payload;
       })

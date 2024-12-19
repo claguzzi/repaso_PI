@@ -13,6 +13,7 @@ export const getUsers = createAsyncThunk("users/getUsers", async () => {
   }
 });
 
+
 export const getUserByName = createAsyncThunk("users/getUserByName", async (nombre) => {
   try {
     const response = await axios.get(`http://localhost:3001/user?name=${nombre}`);

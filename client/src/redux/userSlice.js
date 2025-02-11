@@ -1,11 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+
 const initialState = [];
+
+
+const sourceApi = "https://jsonplaceholder.typicode.com/users";
+const sourceBdd = "http://localhost:3001/user";
+
+
 
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
   try {
-    const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+    const response = await axios.get(sourceBdd);
     return response.data;
   } catch (error) {
     console.error("Error al obtener usuarios:", error);

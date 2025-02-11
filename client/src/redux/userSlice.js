@@ -12,7 +12,7 @@ const sourceBdd = "http://localhost:3001/user";
 
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
   try {
-    const response = await axios.get(sourceBdd);
+    const response = await axios.get(sourceApi);
     return response.data;
   } catch (error) {
     console.error("Error al obtener usuarios:", error);
